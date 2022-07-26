@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      | Reset|DEBUG |1 REC |1 PLAY|STOPREC|2 REC|2 PLAY|      |      |      |  Del |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |EMOJI|      |MUSmod|Aud on|Audoff|AGnorm|AGswap|QWERTY|      |      |      |      |
+ * |      |      |MUSmod|Aud on|Audoff|AGnorm|AGswap|QWERTY|      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |Voice-|Voice+|Mus on|Musoff|MIDIon|MIDIof|TERMON|TERMOF|      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
