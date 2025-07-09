@@ -127,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |RGBTOG|      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_NUMPAD] = LAYOUT_preonic_grid(
+[_NUMPAD] = LAYOUT_ortho_5x12(
     _______, _______, _______, _______, _______, _______, KC_LNUM, KC_P1,    KC_P2,   KC_P3,   KC_PSLS, KC_BSPC,
     _______, _______, _______, _______, _______, _______, _______, KC_P4,    KC_P5,   KC_P6,   KC_PAST, KC_DEL,
     _______, _______, _______, _______, _______, _______, _______, KC_P7,    KC_P8,   KC_P9,   KC_PMNS, KC_PENT,
