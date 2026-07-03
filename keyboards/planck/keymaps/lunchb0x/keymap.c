@@ -16,12 +16,11 @@ enum planck_layers {
 enum planck_keycodes {
   QWERTY = SAFE_RANGE,
   COLEMAK,
-  DYNAMIC_MACRO_RANGE,
 };
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
-#define NUMPAD MO(_NUMPAD)
+#define NMPD MO(_NUMPAD)
 #define GUIDEL LGUI_T(KC_DEL)
 #define TCOPY LCTL(KC_INS)
 #define TPSTE LCTL(LSFT(KC_V))
@@ -43,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_UP,   KC_QUOT,
-    KC_LCTL, NUMPAD, GUIDEL, KC_LALT, LOWER,   KC_SPC,  KC_SPC,    RAISE,   KC_SLSH, KC_LEFT, KC_DOWN, KC_RIGHT
+    KC_LCTL, NMPD,   GUIDEL, KC_LALT, LOWER,   KC_SPC,  KC_SPC,    RAISE,   KC_SLSH, KC_LEFT, KC_DOWN, KC_RIGHT
 ),
 
 /* Colemak
@@ -61,16 +60,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
   KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ENT,
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_UP, KC_QUOT,
-  KC_LCTL, NUMPAD, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_SLSH, KC_LEFT, KC_DOWN,   KC_RGHT
+  KC_LCTL, NMPD,   KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_SLSH, KC_LEFT, KC_DOWN,   KC_RGHT
 ),
 
 /* Lower
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |  |   |
+ * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO ~ |ISO | | Home | End  |      |
+ * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO ~ |ISO | | Home | End  |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | Vol- | Vol+ | Prev |      |             |      | Next |      |      | Play |
  * `-----------------------------------------------------------------------------------'
@@ -86,9 +85,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
+ * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |      | Pg up|      |
+ * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |      | Pg up|  \   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      | prev |      |             |      | Next |      | Pg dn| Play |
  * `-----------------------------------------------------------------------------------'
@@ -102,17 +101,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Numpad
  * ,-----------------------------------------------------------------------------------.
- * |  F3  |      |      |      |      |      |NumLck|   7  |   8  |   9  |   /  | Bksp |
+ * |  F3  |      |      |      |      |      |NumLck|   1  |   2  |   3  |   /  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |   4  |   5  |   6  |   *  |ENTER |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |TCOPY |TPASTE|      |      |   3  |   2  |   1  |   -  |PRINT |
+ * |      |      |      |TCOPY |TPSTE |      |      |   7  |   8  |   9  |   -  |PRINT |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |   0  |   .  |   +  |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_NUMPAD] = LAYOUT_planck_grid(
-    KC_F3, _______, _______, _______, _______, _______, KC_LNUM, KC_P1,    KC_P2,   KC_P3,   KC_PSLS, KC_BSPC,
+    KC_F3, _______, _______, _______, _______, _______, KC_NUM,  KC_P1,    KC_P2,   KC_P3,   KC_PSLS, KC_BSPC,
     _______, _______, _______, _______, _______, _______, _______, KC_P4,    KC_P5,   KC_P6,   KC_PAST, KC_PENT,
     _______, _______, _______, TCOPY,   TPSTE,   _______, _______, KC_P7,    KC_P8,   KC_P9,   KC_PMNS, KC_PSCR,
     _______, _______, _______, _______, _______, _______, _______, _______,  KC_P0,   KC_PDOT, KC_PPLS, _______
@@ -120,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Adjust (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
- * |      | Reset|      |1 REC |1 PLAY|STOPREC|2 REC|2 PLAY|      |      |      |  Del |
+ * |      | Boot |      |1 REC |1 PLAY|STOPREC|2 REC|2 PLAY|      |      |      |  Del |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |MUSmod|Aud on|Audoff|AGnorm|AGswap|QWERTY|      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -130,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = LAYOUT_planck_grid(
-    _______, RESET,   _______,   DM_REC1, DM_PLY1, DM_RSTP, DM_REC2, DM_PLY2, _______,  _______, _______, KC_DEL ,
+    _______, QK_BOOT, _______, DM_REC1, DM_PLY1, DM_RSTP, DM_REC2, DM_PLY2, _______,  _______, _______, KC_DEL ,
     _______, _______, MI_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY, _______,  _______,  _______,  _______,
     _______, AU_PREV,  AU_NEXT,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
@@ -166,6 +165,21 @@ uint16_t muse_counter = 0;
 uint8_t muse_offset = 70;
 uint16_t muse_tempo = 50;
 
+bool dip_switch_update_user(uint8_t index, bool active) {
+  switch (index) {
+    case 0:
+      if (active) {
+        layer_on(_ADJUST);
+      } else {
+        layer_off(_ADJUST);
+      }
+      break;
+    case 1:
+      muse_mode = active;
+      break;
+  }
+  return true;
+}
 
 void matrix_scan_user(void) {
 #ifdef AUDIO_ENABLE
