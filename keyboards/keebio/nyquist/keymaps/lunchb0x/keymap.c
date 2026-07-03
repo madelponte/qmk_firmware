@@ -20,11 +20,10 @@ enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   COLEMAK,
   LOWER,
-  RAISE,
-  NUMPAD
+  RAISE
 };
 
-#define NUMPAD MO(_NUMPAD)
+#define NMPD MO(_NUMPAD)
 #define TCOPY LCTL(KC_INS)
 #define TPSTE LCTL(LSFT(KC_V))
 
@@ -48,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
   KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_UP, KC_QUOT,
-  KC_LCTL, NUMPAD, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_SLSH, KC_LEFT, KC_DOWN, KC_RGHT
+  KC_LCTL, NMPD,   KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_SLSH, KC_LEFT, KC_DOWN, KC_RGHT
 ),
 
 /* Colemak
@@ -69,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_DEL,
   KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ENT,
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_UP, KC_QUOT,
-  KC_LCTL, NUMPAD, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_SLSH, KC_LEFT, KC_DOWN,   KC_RGHT
+  KC_LCTL, NMPD,   KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_SLSH, KC_LEFT, KC_DOWN,   KC_RGHT
 ),
 
 /* Lower
@@ -78,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |  |   |
+ * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO ~ |ISO | | Home | End  |      |
+ * |Brite |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO ~ |ISO | | Home | End  |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | Vol- | Vol+ | Prev |      |             |      | Next |      |      | Play |
  * `-----------------------------------------------------------------------------------'
@@ -99,9 +98,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
+ * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |      | Pg up|      |
+ * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |      | Pg up|  \   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      | prev |      |             |      | Next |      | Pg dn| Play |
  * `-----------------------------------------------------------------------------------'
@@ -116,19 +115,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Numpad
  * ,-----------------------------------------------------------------------------------.
- * |  F3  |      |      |      |      |      |NumLck|   1  |   2  |   3  |   /  | Bksp |
+ * |      |      |      |      |      |      |NumLck|   1  |   2  |   3  |   /  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |   4  |   5  |   6  |   *  |ENTER |
+ * |      |      |      |      |      |      |      |   4  |   5  |   6  |   *  | Del  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |TCOPY |TPASTE|      |      |   7  |   8  |   9  |   -  |PRINT |
+ * |      |      |      |      |      |      |      |   7  |   8  |   9  |   -  |ENTER |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |   0  |   .  |   +  |      |
+ * | PgUp |      |      |TCOPY |TPSTE |      |      |      |   0  |   .  |   +  |Print |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |RGBTOG|      |      |      |      |             |      |      |      |      |      |
+ * | PgDn |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_NUMPAD] = LAYOUT_ortho_5x12(
-    _______, _______, _______, _______, _______, _______, KC_LNUM, KC_P1,    KC_P2,   KC_P3,   KC_PSLS, KC_BSPC,
+    _______, _______, _______, _______, _______, _______, KC_NUM,  KC_P1,    KC_P2,   KC_P3,   KC_PSLS, KC_BSPC,
     _______, _______, _______, _______, _______, _______, _______, KC_P4,    KC_P5,   KC_P6,   KC_PAST, KC_DEL,
     _______, _______, _______, _______, _______, _______, _______, KC_P7,    KC_P8,   KC_P9,   KC_PMNS, KC_PENT,
     KC_PGUP, _______, _______, TCOPY,   TPSTE,   _______, _______, _______,  KC_P0,   KC_PDOT, KC_PPLS, KC_PSCR,
@@ -139,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | Reset|RGB Tg|RGB Md|Hue Up|Hue Dn|Sat Up|Sat Dn|Val Up|Val Dn|      |  Del |
+ * |      | Boot |RGB Tg|RGB Md|Hue Dn|Hue Up|Sat Dn|Sat Up|Val Dn|Val Up|      |  Del |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |Aud on|Audoff|AGnorm|AGswap|Qwerty|Colemk|      |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -150,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] =  LAYOUT_ortho_5x12(
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-  _______, QK_BOOT, RGB_TOG, RGB_MOD, RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, _______, KC_DEL,
+  _______, QK_BOOT, RM_TOGG, RM_NEXT, RM_HUED, RM_HUEU, RM_SATD, RM_SATU, RM_VALD, RM_VALU, _______, KC_DEL,
   _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, _______,  _______, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
@@ -158,12 +157,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 };
-
-#ifdef AUDIO_ENABLE
-float tone_qwerty[][2]     = SONG(QWERTY_SOUND);
-float tone_dvorak[][2]     = SONG(DVORAK_SOUND);
-float tone_colemak[][2]    = SONG(COLEMAK_SOUND);
-#endif
 
 void persistent_default_layer_set(uint16_t default_layer) {
   eeconfig_update_default_layer(default_layer);
